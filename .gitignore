@@ -1,0 +1,12 @@
+#exec
+mod1
+a.out
+
+#obj
+*.o
+
+#lib
+*.a
+
+#tmp
+.*.sw*
