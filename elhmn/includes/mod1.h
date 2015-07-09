@@ -73,7 +73,7 @@
 #  define S_HEIGH		600
 
 #  define K_ESCAPE		53
-#  define K_TAB			65289
+#  define K_TAB			48
 #  define K_UP			126
 #  define K_DOWN		125
 #  define K_RIGHT		124
@@ -150,7 +150,7 @@
 # define UPPER_DIV		1870.
 # define ST				3
 # define MAX_V			10000.
-# define TRANS_NBR		3.
+# define TRANS_NBR		7.
 
 # define H_PER			2.
 
@@ -185,8 +185,8 @@
 ** scale define
 */
 
-# define SCALE			600
-# define K_SCALE		6000
+# define SCALE			400
+# define K_SCALE		4000
 
 # define Z_MAX			20000
 # define X_MAX			20000
