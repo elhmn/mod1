@@ -15,7 +15,7 @@ void	rot_base_z(t_base *base, float rot)
 	float	tmpy;
 
 	if (!base)
-		check_errors(NUL, "base_oper_02.c", "base");
+		error(NUL, "base_oper_02.c", "base", TXT_YELLOW);
 	o_x = base->o.x;
 	o_y = base->o.y;
 	i_x = base->i.x;
@@ -63,7 +63,7 @@ void	rot_base_y(t_base *base, float rot)
 	float	tmpz;
 
 	if (!base)
-		check_errors(NUL, "base_oper_02.c", "base");
+		error(NUL, "base_oper_02.c", "base", TXT_YELLOW);
 	o_x = base->o.x;
 	o_z = base->o.z;
 	i_x = base->i.x;
@@ -111,7 +111,7 @@ void	rot_base_x(t_base *base, float rot)
 	float	tmpz;
 
 	if (!base)
-		check_errors(NUL, "base_oper_02.c", "base");
+		error(NUL, "base_oper_02.c", "base", TXT_YELLOW);
 	o_y = base->o.y;
 	o_z = base->o.z;
 	i_y = base->i.y;

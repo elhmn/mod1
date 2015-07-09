@@ -6,7 +6,7 @@
 /*   By: bmbarga <bmbarga@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/23 13:39:52 by bmbarga           #+#    #+#             */
-/*   Updated: 2015/04/24 18:20:19 by bmbarga          ###   ########.fr       */
+/*   Updated: 2015/06/06 21:09:39 by bmbarga          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,7 @@
 
 void	get_data(t_mod *mod, char *file)
 {
+	ft_putcol_endl(TXT_GREEN, "je suis get_data.c");/*_DEBUG_*/
 	if (!(mod->tops = read_file(file)))
-		check_errors(NUL, "get_data.c", "mod->tops");
-	print_list(mod->tops);/*_DEBUG_*/
-	ft_putendl("je suis get_data.c");/*_DEBUG_*/
+		error(NUL, "get_data.c", "mod->tops", TXT_YELLOW);
 }

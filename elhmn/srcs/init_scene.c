@@ -1,78 +1,74 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   init_scene.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: bmbarga <bmbarga@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2015/06/06 17:02:22 by bmbarga           #+#    #+#             */
+/*   Updated: 2015/06/07 16:47:26 by bmbarga          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "mod1.h"
 #include "check_errors.h"
 
 void	init_l_base(t_base *l_base)
 {
 	if (!l_base)
-		check_errors(NUL, "init_scene.c", "l_base");
+		error(NUL, "init_scene.c", "l_base", TXT_YELLOW);
 	l_base->i.x = 1.;
 	l_base->i.y = 0.;
 	l_base->i.z = 0.;
 	l_base->i.end = 0;
 	l_base->i.col = NULL;
-	if (!(l_base->i.col = init_color(NULL, RED)))
-		check_errors(MALLOC, "i.col", "init_scene.c");
 	l_base->j.x = 0.;
 	l_base->j.y = 1.;
 	l_base->j.z = 0.;
 	l_base->j.end = 0;
 	l_base->j.col = NULL;
-	if (!(l_base->j.col = init_color(NULL, GREEN)))
-		check_errors(MALLOC, "j.col", "init_scene.c");
 	l_base->k.x = 0.;
 	l_base->k.y = 0.;
 	l_base->k.z = 1.;
 	l_base->k.end = 0;
 	l_base->k.col = NULL;
-	if (!(l_base->i.col = init_color(NULL, BLUE)))
-		check_errors(MALLOC, "k.col", "init_scene.c");
 }
 
 void	init_g_base(t_base *g_base)
 {
 	if (!g_base)
-		check_errors(NUL, "init_scene.c", "g_base");
+		error(NUL, "init_scene.c", "g_base", TXT_YELLOW);
 	g_base->i.x = 1.;
 	g_base->i.y = 0.;
 	g_base->i.z = 0.;
 	g_base->i.end = 0;
 	g_base->i.col = NULL;
-	if (!(g_base->i.col = init_color(NULL, RED)))
-		check_errors(MALLOC, "i.col", "init_scene.c");
 	g_base->j.x = 0.;
 	g_base->j.y = 1.;
 	g_base->j.z = 0.;
 	g_base->j.end = 0;
 	g_base->j.col = NULL;
-	if (!(g_base->j.col = init_color(NULL, GREEN)))
-		check_errors(MALLOC, "j.col", "init_scene.c");
 	g_base->k.x = 0.;
 	g_base->k.y = 0.;
 	g_base->k.z = 1.;
 	g_base->k.end = 0;
 	g_base->k.col = NULL;
-	if (!(g_base->k.col = init_color(NULL, BLUE)))
-		check_errors(MALLOC, "k.col", "init_scene.c");
 }
 
 void	init_centers(t_base *l_base, t_base *g_base)
 {
 	if (!l_base || !g_base)
-		check_errors(NUL, "init_scene.c", "bases");
+		error(NUL, "init_scene.c", "bases", TXT_YELLOW);
 	l_base->o.x = 0.;
 	l_base->o.y = 0.;
 	l_base->o.z = 0.;
 	l_base->o.end = 0;
 	l_base->o.col = NULL;
-	if (!(l_base->o.col = init_color(NULL, WHITE)))
-		check_errors(MALLOC, "o.col", "init_scene.c");
 	g_base->o.x = 0.;
 	g_base->o.y = 0.;
 	g_base->o.z = 0.;
 	g_base->o.end = 0;
 	g_base->o.col = NULL;
-	if (!(g_base->o.col = init_color(NULL, WHITE)))
-		check_errors(MALLOC, "o.col", "init_scene.c");
 }
 
 void		init_scene(t_mod *mod)

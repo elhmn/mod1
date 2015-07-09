@@ -6,7 +6,7 @@
 /*   By: bmbarga <bmbarga@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/04/28 15:32:21 by bmbarga           #+#    #+#             */
-/*   Updated: 2015/04/28 15:32:22 by bmbarga          ###   ########.fr       */
+/*   Updated: 2015/06/06 16:58:27 by bmbarga          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 void			set_base(t_mod *mod, t_base *base, int o_x, int o_y)
 {
 	if (!mod)
-		check_errors(NUL, "init_mod_tools.c", "mod");
+		error(NUL, "init_mod_tools.c", "mod", TXT_YELLOW);
 	base->o.pos.x = o_x;
 	base->o.pos.y = o_y;
 	base->i.pos.x = o_x + UNIT;
@@ -30,7 +30,7 @@ void			set_base(t_mod *mod, t_base *base, int o_x, int o_y)
 void		init_base(t_mod *mod, t_base *base)
 {
 	if (!mod)
-		check_errors(NUL, "init_mod_tools.c", "mod");
+		error(NUL, "init_mod_tools.c", "mod", TXT_YELLOW);
 	if (base)
 	{
 		base->o.pt.x = 0;

@@ -6,7 +6,7 @@
 /*   By: mcanal <zboub@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/13 08:12:25 by mcanal            #+#    #+#             */
-/*   Updated: 2015/04/24 21:00:44 by bmbarga          ###   ########.fr       */
+/*   Updated: 2015/06/13 20:57:40 by bmbarga          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,12 @@
 #include "header.h"
 #include "check_errors.h"
 #include <unistd.h>
-#include <stdio.h> /*_DEBUG_*/
 
 static int		check_map(char *map, char *file)
 {
 	(void)file;
 	if (!map)
-		check_errors(NUL, "map", "read.c");
+		error(NUL, "map", "read.c", TXT_YELLOW);
 	while (*map)
 	{
 		if (*map != '(' && *map != ')' && *map != ','\
@@ -73,7 +72,6 @@ t_list			*read_file(char *file)
 	if (!check_map(map, file))
 		return (failn("Invalid map."));
 	fill_list(map + 1, &alst);
-//	ft_debugstr("map", map); /*_DEBUG_*/
 	ft_memdel((void*)&map);
 	close(file_fd);
 	return (alst);

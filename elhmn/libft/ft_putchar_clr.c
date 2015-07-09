@@ -6,7 +6,7 @@
 /*   By: mcanal <mcanal@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/03 14:53:08 by mcanal            #+#    #+#             */
-/*   Updated: 2015/04/24 20:43:51 by bmbarga          ###   ########.fr       */
+/*   Updated: 2015/06/04 14:55:39 by bmbarga          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 
 #include "libft.h"
 #include <unistd.h>
+#include <stdlib.h>
 
 void	ft_putchar_clr(char c, char *clr)
 {
@@ -33,4 +34,5 @@ void	ft_putchar_clr(char c, char *clr)
 	str[3] = (clr[0] == 's' ? '6' : str[3]);
 	str[3] = (clr[0] == 'w' ? '7' : str[3]);
 	write(1, str, 13);
+	free(str);
 }

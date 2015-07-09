@@ -6,7 +6,7 @@
 /*   By: mcanal <zboub@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/14 03:51:51 by mcanal            #+#    #+#             */
-/*   Updated: 2015/04/24 20:56:20 by bmbarga          ###   ########.fr       */
+/*   Updated: 2015/06/06 21:09:01 by bmbarga          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int		get_all(int fd, char **a)
 
 	buf = ft_strnew(BUFF_SIZE);
 	if (!buf)
-		check_errors(MALLOC, "buf", "get_all.c");
+		error(MALLOC, "buf", "get_all.c", TXT_YELLOW);
 	if (!a || fd < 0)
 		return (0);
 	if (!*a)

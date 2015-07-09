@@ -6,20 +6,13 @@
 /*   By: bmbarga <bmbarga@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/21 17:33:17 by bmbarga           #+#    #+#             */
-/*   Updated: 2015/04/28 20:00:57 by bmbarga          ###   ########.fr       */
+/*   Updated: 2015/06/13 21:52:28 by bmbarga          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "mod1.h"
 #include "header.h"
-#include "debug.h" /*_DEBUG_*/
-
-#include <stdio.h> /*_DEBUG_*/
-
-/*
-** - ALGO BASIQUE 3 (with maths) ::
-** 1- determiner les pts en utilisant le polynome de lagrange
-*/
+#include "check_errors.h"
 
 /*
 ** Structure globale du main du mod1 (main.c) ::
@@ -35,34 +28,23 @@
 **  - Destroy t_mod datas								(mcanal) (bmbarga)
 */
 
-/*TO_DO :: CHECKER LES DIVISIONS PAR ZERO ET CORRIGER CE SEGFAULT BIZZARE*/
-
 int		main(int ac, char **av)
 {
-	t_mod		mod;
+	t_mod		*mod;
 	char		*file;
 
-	file = ft_strsub(av[1], 0,  ft_strlen(av[1]));
-//	ft_putcol(TXT_YELLOW, "je suis main.c. :D\n\n"); /*_DEBUG_*/
 	if (ac == 1)
-		ft_putendl("Hey !! I need a non binary file.");
+		ft_putcol_endl(TXT_RED, "Hey !! I need a non binary file.");
 	else if (ac == 2)
 	{
-//		data_error(&mod);// NYI
-		init_mod(&mod, file);
-//		ft_putendl(file); /*_DEBUG_*/
-//		print_map(mod.map); /*_DEBUG_*/
-//		ft_putcol(TXT_RED, "l_mesh :: \n");/*_DEBUG_*/
-//		print_mesh_line(mod.obj->l_mesh);/*_DEBUG_*/
-//		ft_putcol(TXT_RED, "g_mesh :: \n");/*_DEBUG_*/
-//		print_mesh_line(mod.obj->g_mesh);/*_DEBUG_*/
-//		ft_putcol(TXT_RED, "s_mesh :: \n");/*_DEBUG_*/
-//		print_mesh_line(mod.obj->s_mesh);/*_DEBUG_*/
-		mlx_loop(mod.e.mlx); /** loop **/
+		file = ft_strsub(av[1], 0,  ft_strlen(av[1]));
+		if (!(mod = (t_mod*)malloc(sizeof(t_mod))))
+			error(MALLOC, "main.c", "mod", TXT_YELLOW);
+		init_mod(mod, file);
 		free(file);
-		destroy_mod(&mod);
+		mlx_loop(mod->e.mlx);
 	}
 	else
-		ft_putendl("Too much arguments.");
+		ft_putcol_endl(TXT_RED, "Too much arguments.");
 	return (0);
 }

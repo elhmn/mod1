@@ -48,7 +48,7 @@ void	print_vertx(t_vertx vertx)
 void	print_base(t_base *base)
 {
 	if (!base)
-		check_errors(NUL, "print_scene.c", "base");
+		error(NUL, "print_scene.c", "base", TXT_YELLOW);
 	printf("base->o.x = [%f]\n", base->o.x);
 	printf("base->o.y = [%f]\n", base->o.y);
 	printf("base->o.z = [%f]\n", base->o.z);

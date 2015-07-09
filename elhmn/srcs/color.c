@@ -6,7 +6,7 @@
 /*   By: bmbarga <bmbarga@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/13 19:33:40 by bmbarga           #+#    #+#             */
-/*   Updated: 2015/05/05 05:45:15 by bmbarga          ###   ########.fr       */
+/*   Updated: 2015/06/06 17:21:20 by bmbarga          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,12 @@ t_color	*init_color(t_color *color, t_uint col)
 {
 	if (!color)
 		if (!(color = (t_color*)malloc(sizeof(t_color))))
-			check_errors(MALLOC, "color", "color.c");
+			error(MALLOC, "color", "color.c", TXT_YELLOW);
 	color->color = col;
+	color->alpha = (col & MASK_A) >> 8 * 3;
 	color->r = (col & MASK_R) >> (8 * 2);
 	color->g = (col & MASK_G) >> 8;
 	color->b = (col & MASK_B);
-	color->alpha = 0;
 	return (color);
 }
 
@@ -73,7 +73,7 @@ t_color	*degrad_col(t_color *Ci, t_color *Cf, float Zi, float Zf, float Zn)
 
 	result = NULL;
 	if (!(result = init_color(NULL, 0)))
-		check_errors(MALLOC, "color.c", "result");
+		error(MALLOC, "color.c", "result", TXT_YELLOW);
 	set_color(result, Rn, Gn, Bn);
 	return (result);
 }
