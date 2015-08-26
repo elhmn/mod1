@@ -6,4 +6,9 @@ Cray mountains with pretty water
 ### TODO: ###
 
 * do the job
-<iframe allowfullscreen="" frameborder="0" height="344" src="https://www.youtube.com/embed/dm73BJLzKcg" width="459"></iframe>
+
+### Well We did the job ###
+
+<HTML>
+   <a href="https://www.youtube.com/watch?v=dm73BJLzKcg"><img src="./surface_overview.png" alt="cat" style="width:304px;height:228px;"> </a>
+</HTML>
